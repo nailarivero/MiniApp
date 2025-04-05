@@ -13,18 +13,18 @@
 
   <h2>Agregar Tarea</h2>
   <input type="text" id="tareaInput" placeholder="Escriba una tarea">
-  <button onclick="frontendAgregarTarea()">Agregar</button>
+  <button onclick="frontendAgregarTarea()">Agregar</button> //boton q al hacer clic llama a la funcion 
   <div id="mensaje"></div>
 
-  <script src="database.js"></script> //importa los modulos
+  <script src="database.js"></script> //importa los archivos para que el html pueda usar las funciones
   <script src="backend.js"></script>
   <script>
     
     function frontendAgregarTarea() { //se va a ejecutar cuando se hace clic en el boton agregar
-      const tarea = document.getElementById("tareaInput").value;
+      const tarea = document.getElementById("tareaInput").value; //recibe la tarea q ingresa el usuario
       const mensaje = backendRecibirTarea(tarea); // se comunica con el back end
-      document.getElementById("mensaje").innerText = mensaje; 
-      document.getElementById("tareaInput").value = ""; 
+      document.getElementById("mensaje").innerText = mensaje; //muestra el mensaje
+      document.getElementById("tareaInput").value = ""; //borra el texto para que se pueda ingresar uno nuevo
     }
   </script>
 
