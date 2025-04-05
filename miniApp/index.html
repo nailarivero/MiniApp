@@ -16,14 +16,13 @@
   <button onclick="frontendAgregarTarea()">Agregar</button>
   <div id="mensaje"></div>
 
-  
-  <script src="database.js"></script>
+  <script src="database.js"></script> //importa los modulos
   <script src="backend.js"></script>
   <script>
     
     function frontendAgregarTarea() {
       const tarea = document.getElementById("tareaInput").value;
-      const mensaje = backendRecibirTarea(tarea);
+      const mensaje = backendRecibirTarea(tarea); // se comunica con el back end
       document.getElementById("mensaje").innerText = mensaje; 
       document.getElementById("tareaInput").value = ""; 
     }
@@ -31,3 +30,4 @@
 
 </body>
 </html>
+//Escalabilidad: se puede conectar con un back real
