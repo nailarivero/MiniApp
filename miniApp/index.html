@@ -20,7 +20,7 @@
   <script src="backend.js"></script>
   <script>
     
-    function frontendAgregarTarea() {
+    function frontendAgregarTarea() { //se va a ejecutar cuando se hace clic en el boton agregar
       const tarea = document.getElementById("tareaInput").value;
       const mensaje = backendRecibirTarea(tarea); // se comunica con el back end
       document.getElementById("mensaje").innerText = mensaje; 
