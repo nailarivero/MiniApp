@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini App de Tareas</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 400px; margin: auto; }
+    input, button { padding: 10px; margin-top: 10px; width: 100%; }
+    #mensaje { margin-top: 15px; font-weight: bold; color: green; }
+  </style>
+</head>
+<body>
+
+  <h2>Agregar Tarea</h2>
+  <input type="text" id="tareaInput" placeholder="Escriba una tarea">
+  <button onclick="frontendAgregarTarea()">Agregar</button>
+  <div id="mensaje"></div>
+
+  
+  <script src="database.js"></script>
+  <script src="backend.js"></script>
+  <script>
+    
+    function frontendAgregarTarea() {
+      const tarea = document.getElementById("tareaInput").value;
+      const mensaje = backendRecibirTarea(tarea);
+      document.getElementById("mensaje").innerText = mensaje; 
+      document.getElementById("tareaInput").value = ""; 
+    }
+  </script>
+
+</body>
+</html>
